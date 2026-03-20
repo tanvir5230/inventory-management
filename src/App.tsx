@@ -1,5 +1,7 @@
+import { Button } from './components/ui/button';
+
 function App() {
-  return <p>Project Setup Stage!</p>;
+  return <Button size='lg'>Test</Button>;
 }
 
 export default App;
