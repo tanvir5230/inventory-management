@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "biome lint ./src",
     "format": "biome format ./src --write",
-    "check": "biome check --write ./src"
+    "check": "biome check --write ./src",
+    "generate:feature": "node scripts/gen-feature.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
