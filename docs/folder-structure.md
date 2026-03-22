@@ -23,13 +23,17 @@ Structure them like this:
 - Keeps all related code in one place  
 - Improves maintainability and readability & navigation to the codebase
 
+## app
+
+- app directory holds the layouts, global pages (non-feature specific), App component, routers
+
 ## components
 
 - components here have NO business logic, NO API calls, NO auth checks. 
 - They receive props and render UI. If a component needs useAuth() or calls an API, it belongs in features/ instead.
 - `ui/` — primitives: Button, Input, Modal, Badge
 - `layout/` — structural shells: Sidebar, Navbar, PageHeader
-- `feedback/` — Spinner, Toast, ErrorBoundary
+- `feedback/` — Loading, Toast, ErrorBoundary
 
 ## hook/ - app wide hooks
 
@@ -41,7 +45,7 @@ Here app-wide hooks are placed. Feature level hooks shouldn't stay here.
 - Isolates third-party APIs with a wrapper. So, swapping a vendor is a one-file change
 - Never import from Sentry/Analytics/i18n directly in components — always go through `lib/`
 
-## providers/ — React contexts
+## context/ — React contexts
 
 - `AuthProvider, ThemeProvider`. Each file exports the context, its provider, and is paired with a hook in hooks/. 
 - Keep contexts lean — they hold the value and the setter, not business logic.
@@ -55,8 +59,8 @@ Here app-wide hooks are placed. Feature level hooks shouldn't stay here.
 ## services/ — shared API infrastructure
 
 - The HTTP client setup goes here, NOT the individual API calls (those live in features/).
-- `apiClient.ts` — Axios/fetch instance with base URL, interceptors, token injection, 401 handling
-- `queryClient.ts` — React Query client config (stale times, retry logic)
+- `api-client.ts` — Axios/fetch instance with base URL, interceptors, token injection, 401 handling
+- `query-client.ts` — React Query client config (stale times, retry logic)
 - Feature-level calls: features/auth/authService.ts, features/billing/invoiceService.ts
 
 ## store/ — global client state
