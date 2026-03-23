@@ -1,4 +1,3 @@
-import { Settings } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router';
 import logo from '@/assets/images/logo.png';
@@ -18,23 +17,28 @@ import {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { dashboardNavItems } from './sidebar.data';
 
 export const DashboarSidebar = () => {
   const { pathname } = useLocation();
+  const { open } = useSidebar();
 
   return (
     <Sidebar collapsible='icon'>
-      <SidebarHeader className='flex flex-row items-center justify-between px-4 py-3 border-b h-16.25'>
-        <Link to='/dashboard'>
+      <SidebarHeader className='flex h-16.25 flex-row items-center justify-between border-b px-4 py-3 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0'>
+        <Link
+          to='/dashboard'
+          className='overflow-hidden transition-all group-data-[collapsible=icon]:w-0 group-data-[collapsible=icon]:opacity-0'
+        >
           <Image src={logo} alt='Logo' className='w-28.5 object-contain' />
         </Link>
 
-        <SidebarTrigger className='bg-primary text-primary-foreground rounded-full p-2 translate-x-7.5 z-10' />
+        <SidebarTrigger className='z-10 rounded-full bg-primary p-2 text-primary-foreground group-data-[state=expanded]:translate-x-7.5' />
       </SidebarHeader>
 
-      <SidebarContent className='px-3 py-2'>
+      <SidebarContent className={open ? 'px-3 py-2' : ''}>
         {dashboardNavItems.map((group, i) => (
           <React.Fragment key={group.title}>
             <SidebarGroup>
@@ -43,7 +47,6 @@ export const DashboarSidebar = () => {
                   {group.title}
                 </SidebarGroupLabel>
               )}
-
               <SidebarGroupContent>
                 <SidebarMenu className='gap-1'>
                   {group.children.map((item) => {
@@ -55,7 +58,7 @@ export const DashboarSidebar = () => {
                           asChild={!!item.href}
                           isActive={isActive}
                           tooltip={item.title}
-                          className='px-3 py-2 text-body-lg font-medium h-10'
+                          className='h-10 px-3 py-2 text-body-lg font-medium'
                         >
                           {item.href ? (
                             <Link to={item.href}>
@@ -70,7 +73,6 @@ export const DashboarSidebar = () => {
                           )}
                         </SidebarMenuButton>
 
-                        {/* Nested children (optional) */}
                         {item.children && item.children.length > 0 && (
                           <SidebarMenu className='ml-4 mt-1 px-3 py-2 text-body-lg font-medium'>
                             {item.children.map((subItem) => {
@@ -112,7 +114,7 @@ export const DashboarSidebar = () => {
           <SidebarMenuItem>
             <SidebarMenuButton asChild isActive={pathname === '/settings'} tooltip='Settings'>
               <Link to='/settings'>
-                <Settings />
+                <Icon name='settings' />
                 <span>Settings</span>
               </Link>
             </SidebarMenuButton>

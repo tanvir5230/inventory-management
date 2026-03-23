@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/Icon';
 import SearchBox from '@/components/ui/search-box';
 import { Separator } from '@/components/ui/separator';
+import { useSidebar } from '@/components/ui/sidebar';
 import { cn } from '@/utils';
 import LanguageSelection from './LanguageSelection';
 import { StoreSelection } from './StoreSelection';
@@ -11,6 +12,8 @@ import UserAvatar from './UserAvatar';
 interface DashboardHeaderProps extends HTMLAttributes<HTMLDivElement> {}
 
 export function DashboardHeader({ className, ...rest }: DashboardHeaderProps) {
+  const { toggleSidebar } = useSidebar();
+
   return (
     <div
       className={cn(
@@ -20,33 +23,48 @@ export function DashboardHeader({ className, ...rest }: DashboardHeaderProps) {
       {...rest}
     >
       <div className='flex items-center gap-2'>
-        <SearchBox />
-      </div>
-      <div className='flex-1 flex items-center justify-end gap-2 h-full'>
-        <StoreSelection />
+        <Button
+          variant='ghost'
+          size='icon-sm'
+          className='md:hidden'
+          onClick={toggleSidebar}
+          aria-label='Open sidebar'
+        >
+          <Icon name='menu' />
+        </Button>
 
-        <Button className='h-full'>
+        <SearchBox className='hidden sm:flex' />
+      </div>
+
+      <div className='flex flex-1 items-center justify-end gap-2 h-full'>
+        <div className='hidden lg:flex'>
+          <StoreSelection />
+        </div>
+
+        <Button className='hidden h-full sm:flex'>
           <Icon name='circlePlus' /> Add New
         </Button>
 
-        <Button className='h-full' variant='secondary'>
+        <Button className='hidden h-full md:flex' variant='secondary'>
           <Icon name='laptop' />
           POS
         </Button>
 
-        <Separator orientation='vertical' className='mx-1' />
+        <Separator orientation='vertical' className='mx-1 hidden md:block' />
 
-        <LanguageSelection />
+        <div className='hidden md:flex'>
+          <LanguageSelection />
+        </div>
 
-        <Button className='px-2 text-lg leading-none w-10 h-10 bg-light text-muted-foreground'>
+        <Button className='hidden w-10 h-10 px-2 bg-light text-muted-foreground sm:flex'>
           <Icon name='maximize' />
         </Button>
 
-        <Button className='px-2 text-lg leading-none w-10 h-10 bg-light text-muted-foreground'>
+        <Button className='w-10 h-10 px-2 bg-light text-muted-foreground'>
           <Icon name='bell' />
         </Button>
 
-        <Button className='px-2 text-lg leading-none w-10 h-10 bg-light text-muted-foreground'>
+        <Button className='hidden w-10 h-10 px-2 bg-light text-muted-foreground sm:flex'>
           <Icon name='settings' />
         </Button>
 
