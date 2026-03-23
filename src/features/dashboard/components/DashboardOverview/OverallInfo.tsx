@@ -53,7 +53,7 @@ function CustomerStatRow({ label, value, trend, colorVar }: (typeof CUSTOMER_STA
 
 export function OverallInfo() {
   return (
-    <Card className='col-span-2 border-none'>
+    <Card className='col-span-4 lg:col-span-2 border-none'>
       <CardHeader className='flex flex-row items-center gap-2'>
         <div className='rounded-xl bg-info-100 p-2 text-info'>
           <Icon name='info' strokeWidth={2} size={12} />

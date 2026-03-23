@@ -5,9 +5,9 @@ import { useGetDashboardOverview } from '../../hooks';
 import DashboardOverviewAlert from './Alert';
 import FinancialSummaryCard from './FinancialSummaryCard';
 import { DashboardOverviewHeader } from './Header';
-import { OverallInfo } from './OverallInfo';
 import { OverviewSummaryCard } from './OverviewSummaryCard';
 import { SalesPurchaseChart } from './SalesPurchaseChart';
+import { OverallInfo } from './OverallInfo';
 
 const DashboardOverview = () => {
   const [showLowStockAlert, setShowLowStockAlert] = useState<boolean>(true);
