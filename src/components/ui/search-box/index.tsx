@@ -3,6 +3,7 @@ import { useDebounce } from '@/hooks';
 import { cn } from '@/utils';
 import { Icon } from '../Icon';
 import { Input } from '../input';
+import { Kbd } from '../kbd';
 
 interface SearchBoxProps extends React.HTMLAttributes<HTMLDivElement> {
   onSearch?: (value: string) => void;
@@ -23,7 +24,7 @@ const SearchBox = ({ className, onSearch, delay = 300, ...rest }: SearchBoxProps
       {...rest}
       className={cn(
         'flex items-center gap-2 max-w-xs w-full',
-        'p-1 pl-2 rounded-md border bg-background',
+        'p-1 pl-2 rounded-md border bg-background h-10',
         'focus-within:ring-2 focus-within:ring-ring',
         className,
       )}
@@ -37,14 +38,9 @@ const SearchBox = ({ className, onSearch, delay = 300, ...rest }: SearchBoxProps
         className='border-none shadow-none focus-visible:ring-0 p-0 h-auto'
       />
 
-      <span
-        className={cn(
-          'text-sm text-secondary bg-border',
-          'px-1.5 py-1 rounded border',
-          'hidden sm:inline-flex items-center gap-1',
-        )}
-      >
-        <Icon name='command' size={14} /> K
+      <span className='flex items-center gap-0.5'>
+        <Kbd className={cn('text-sm text-secondary', 'border', 'hidden sm:inline')}>⌘</Kbd>
+        <Kbd className={cn('text-sm text-secondary', 'border', 'hidden sm:inline')}>K</Kbd>
       </span>
     </div>
   );

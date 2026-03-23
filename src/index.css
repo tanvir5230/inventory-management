@@ -57,6 +57,8 @@
   --color-grey-700: var(--grey-700);
   --color-grey-800: var(--grey-800);
   --color-grey-900: var(--grey-900);
+  --color-orange-transparent: var(--orange-transparent);
+  --color-orange: var(--orange);
 }
 
 :root {

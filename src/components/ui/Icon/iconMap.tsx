@@ -1,7 +1,6 @@
 import {
   Activity,
   AlertCircle,
-  AlertTriangle,
   ArrowDown,
   ArrowLeft,
   ArrowLeftRight,
@@ -16,7 +15,6 @@ import {
   Bell,
   Boxes,
   Building2,
-  // Misc
   Calendar,
   Check,
   CheckCircle,
@@ -24,25 +22,22 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
+  CircleAlert,
   CirclePlus,
+  CircleQuestionMark,
   ClipboardCheck,
   ClipboardList,
-  // Fallback
-  CircleQuestionMark,
   Clock,
   CommandIcon,
   CreditCard,
   Download,
-  // Files
   File,
   FileSearch,
   FileText,
   Folder,
   Gift,
   Heart,
-  // Navigation
   Home,
-  // Status
   Info,
   Landmark,
   Laptop,
@@ -64,7 +59,6 @@ import {
   Pause,
   Pencil,
   Percent,
-  // Media
   Play,
   Plus,
   QrCode,
@@ -73,7 +67,6 @@ import {
   Ruler,
   Scale,
   ScrollText,
-  // Actions
   Search,
   Settings,
   ShieldCheck,
@@ -90,7 +83,6 @@ import {
   TrendingUp,
   Truck,
   Upload,
-  // User
   User,
   UserCheck,
   Users,
@@ -136,7 +128,7 @@ export const IconMap: Record<TIconName, TIcon> = {
 
   // ===== Status =====
   info: Info,
-  warning: AlertTriangle,
+  warning: CircleAlert,
   error: AlertCircle,
   success: CheckCircle,
   loader: Loader2,
