@@ -18,7 +18,10 @@ const router = createBrowserRouter([
   {
     path: paths.app.dashboard.path,
     Component: DashboardLayout,
-    children: [{ index: true, Component: DashboardPage }],
+    children: [
+      { index: true, Component: DashboardPage },
+      { path: '*', element: <NotFoundPage className='h-auto' /> },
+    ],
     ErrorBoundary: ErrorFallback,
   },
   {
