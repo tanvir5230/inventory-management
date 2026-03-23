@@ -4,7 +4,7 @@ A full-featured Point-of-Sale and Inventory Management dashboard built with a mo
 
 ---
 
-## Screenshots Created (till now)
+## Screenshot of Screens Created till now
 
 | Dashboard | 404 Page |
 |---|---|
