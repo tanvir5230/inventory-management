@@ -38,7 +38,11 @@ export const dashboardNavItems: IDashboardNavGroup[] = [
       { title: 'Sub Category', href: app.inventory.subCategories.path, icon: 'subCategory' },
       { title: 'Brands', href: app.inventory.brands.path, icon: 'brands' },
       { title: 'Units', href: app.inventory.units.path, icon: 'units' },
-      { title: 'Variant Attributes', href: app.inventory.variantAttributes.path, icon: 'variantAttributes' },
+      {
+        title: 'Variant Attributes',
+        href: app.inventory.variantAttributes.path,
+        icon: 'variantAttributes',
+      },
       { title: 'Warranties', href: app.inventory.warranties.path, icon: 'warranties' },
       { title: 'Print Barcode', href: app.inventory.barcode.path, icon: 'printBarcode' },
       { title: 'Print QR Code', href: app.inventory.qrCode.path, icon: 'printQrCode' },
@@ -93,7 +97,11 @@ export const dashboardNavItems: IDashboardNavGroup[] = [
       { title: 'Balance Sheet', href: app.finance.balanceSheet.path, icon: 'balanceSheet' },
       { title: 'Trial Balance', href: app.finance.trialBalance.path, icon: 'trialBalance' },
       { title: 'Cash Flow', href: app.finance.cashFlow.path, icon: 'cashFlow' },
-      { title: 'Account Statement', href: app.finance.accountStatement.path, icon: 'accountStatement' },
+      {
+        title: 'Account Statement',
+        href: app.finance.accountStatement.path,
+        icon: 'accountStatement',
+      },
     ],
   },
 
@@ -126,8 +134,16 @@ export const dashboardNavItems: IDashboardNavGroup[] = [
     title: 'User Management',
     children: [
       { title: 'Users', href: app.userManagement.users.path, icon: 'users' },
-      { title: 'Roles & Permissions', href: app.userManagement.roles.path, icon: 'rolesPermissions' },
-      { title: 'Delete Account Request', href: app.userManagement.deleteRequests.path, icon: 'deleteRequest' },
+      {
+        title: 'Roles & Permissions',
+        href: app.userManagement.roles.path,
+        icon: 'rolesPermissions',
+      },
+      {
+        title: 'Delete Account Request',
+        href: app.userManagement.deleteRequests.path,
+        icon: 'deleteRequest',
+      },
     ],
   },
 ];
