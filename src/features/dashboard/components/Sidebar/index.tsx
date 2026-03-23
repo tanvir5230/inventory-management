@@ -1,4 +1,5 @@
 import { Settings } from 'lucide-react';
+import React from 'react';
 import { Link, useLocation } from 'react-router';
 import logo from '@/assets/images/logo.png';
 import { Icon } from '@/components/ui/Icon';
@@ -15,6 +16,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarSeparator,
 } from '@/components/ui/sidebar';
 import { dashboardNavItems } from './sidebar.data';
 
@@ -30,70 +32,75 @@ export const DashboarSidebar = () => {
       </SidebarHeader>
 
       <SidebarContent className='px-3 py-2'>
-        {dashboardNavItems.map((group) => (
-          <SidebarGroup key={group.title}>
-            {group.title && (
-              <SidebarGroupLabel className='text-body-sm text-secondary'>
-                {group.title}
-              </SidebarGroupLabel>
-            )}
+        {dashboardNavItems.map((group, i) => (
+          <React.Fragment key={group.title}>
+            <SidebarGroup>
+              {group.title && (
+                <SidebarGroupLabel className='text-body-sm text-secondary'>
+                  {group.title}
+                </SidebarGroupLabel>
+              )}
 
-            <SidebarGroupContent>
-              <SidebarMenu className='gap-1'>
-                {group.children.map((item) => {
-                  const isActive = Boolean(item.href && pathname === item.href);
+              <SidebarGroupContent>
+                <SidebarMenu className='gap-1'>
+                  {group.children.map((item) => {
+                    const isActive = Boolean(item.href && pathname === item.href);
 
-                  return (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton
-                        asChild={!!item.href}
-                        isActive={isActive}
-                        tooltip={item.title}
-                        className='px-3 py-2 text-body-lg font-medium h-10'
-                      >
-                        {item.href ? (
-                          <Link to={item.href}>
-                            {item.icon && <Icon name={item.icon} />}
-                            <span>{item.title}</span>
-                          </Link>
-                        ) : (
-                          <div className='flex items-center gap-2'>
-                            {item.icon && <Icon name={item.icon} />}
-                            <span>{item.title}</span>
-                          </div>
+                    return (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton
+                          asChild={!!item.href}
+                          isActive={isActive}
+                          tooltip={item.title}
+                          className='px-3 py-2 text-body-lg font-medium h-10'
+                        >
+                          {item.href ? (
+                            <Link to={item.href}>
+                              {item.icon && <Icon name={item.icon} />}
+                              <span>{item.title}</span>
+                            </Link>
+                          ) : (
+                            <div className='flex items-center gap-2'>
+                              {item.icon && <Icon name={item.icon} />}
+                              <span>{item.title}</span>
+                            </div>
+                          )}
+                        </SidebarMenuButton>
+
+                        {/* Nested children (optional) */}
+                        {item.children && item.children.length > 0 && (
+                          <SidebarMenu className='ml-4 mt-1 px-3 py-2 text-body-lg font-medium'>
+                            {item.children.map((subItem) => {
+                              const isSubActive = Boolean(
+                                subItem.href && pathname === subItem.href,
+                              );
+
+                              return (
+                                <SidebarMenuItem key={subItem.title}>
+                                  <SidebarMenuButton
+                                    asChild
+                                    isActive={isSubActive}
+                                    tooltip={subItem.title}
+                                    className='active:bg-primary active:text-primary-foreground'
+                                  >
+                                    <Link to={subItem.href!}>
+                                      {subItem.icon && <Icon name={subItem.icon} />}
+                                      <span>{subItem.title}</span>
+                                    </Link>
+                                  </SidebarMenuButton>
+                                </SidebarMenuItem>
+                              );
+                            })}
+                          </SidebarMenu>
                         )}
-                      </SidebarMenuButton>
-
-                      {/* Nested children (optional) */}
-                      {item.children && item.children.length > 0 && (
-                        <SidebarMenu className='ml-4 mt-1 px-3 py-2 text-body-lg font-medium'>
-                          {item.children.map((subItem) => {
-                            const isSubActive = Boolean(subItem.href && pathname === subItem.href);
-
-                            return (
-                              <SidebarMenuItem key={subItem.title}>
-                                <SidebarMenuButton
-                                  asChild
-                                  isActive={isSubActive}
-                                  tooltip={subItem.title}
-                                  className='active:bg-primary active:text-primary-foreground'
-                                >
-                                  <Link to={subItem.href!}>
-                                    {subItem.icon && <Icon name={subItem.icon} />}
-                                    <span>{subItem.title}</span>
-                                  </Link>
-                                </SidebarMenuButton>
-                              </SidebarMenuItem>
-                            );
-                          })}
-                        </SidebarMenu>
-                      )}
-                    </SidebarMenuItem>
-                  );
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+                      </SidebarMenuItem>
+                    );
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+            {i !== dashboardNavItems.length - 1 && <SidebarSeparator className='mx-0 my-3' />}
+          </React.Fragment>
         ))}
       </SidebarContent>
 
