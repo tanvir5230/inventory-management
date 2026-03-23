@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorFallback } from '@/components/feedback/Error';
 import { Loading } from '@/components/feedback/Loading';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import { getQueryClient } from '@/lib';
 
 type AppProviderProps = {
@@ -26,7 +27,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         <HelmetProvider>
           <QueryClientProvider client={queryClient}>
             {import.meta.env.DEV && <ReactQueryDevtools />}
-            {children}
+            <TooltipProvider>{children}</TooltipProvider>
           </QueryClientProvider>
         </HelmetProvider>
       </ErrorBoundary>
