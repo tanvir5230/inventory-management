@@ -36,7 +36,7 @@ class ApiClient {
   }
 
   private async getAuthToken(): Promise<string | null> {
-    return '';
+    return 'test tokens';
   }
 
   private async setAuthHeader(
@@ -127,32 +127,24 @@ class ApiClient {
 
       const response = await this.axiosInstance.request(config);
 
-      const { data } = response;
+      const { data, status } = response;
 
-      if (data.success || response.status === 204) {
+      if (status === 204) {
         return {
           success: true,
-          message: data.message,
+          message: data.message || 'No content',
           data: data.data,
-          ...(data.meta ? { meta: data.meta } : {}),
           error: null,
         };
-      } else {
-        const errorData = data;
-        return {
-          success: false,
-          message: errorData.message || 'Request failed',
-          statusCode: errorData.statusCode || response.status || 400,
-          errorCode: errorData.errorCode,
-          error: {
-            message: errorData.message || 'Request failed',
-            status: errorData.statusCode || response.status || 400,
-            code: errorData.errorCode,
-            details: data,
-          },
-          data: null,
-        };
       }
+
+      return {
+        success: true,
+        message: data?.message ?? 'Request successful',
+        data: data?.data ?? data,
+        ...(data?.meta ? { meta: data.meta } : {}),
+        error: null,
+      };
     } catch (error) {
       return this.handleError(error);
     }
