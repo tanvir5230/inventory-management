@@ -191,4 +191,4 @@ class ApiClient {
   }
 }
 
-export const apiClient = new ApiClient(env.API_URL);
+export const apiClient = new ApiClient(`${env.API_URL}/api/v1`);

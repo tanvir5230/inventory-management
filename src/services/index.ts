@@ -1,2 +1,2 @@
-export * from './apiClient';
-export * from './queryClient';
+export * from './api-client';
+export * from './query-client';

@@ -6,7 +6,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ErrorFallback } from '@/components/feedback/Error';
 import { Loading } from '@/components/feedback/Loading';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { getQueryClient } from '@/lib';
+import { getQueryClient } from '@/services';
 
 type AppProviderProps = {
   children: React.ReactNode;

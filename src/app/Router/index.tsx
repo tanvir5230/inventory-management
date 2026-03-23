@@ -5,7 +5,7 @@ import { DashboardLayout, RootLayout } from '../layouts';
 import { paths } from './paths';
 
 const LandingPage = lazy(() => import('../pages/landing'));
-const DashboardPage = lazy(() => import('../pages/landing'));
+const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'));
 const NotFoundPage = lazy(() => import('../pages/not-found'));
 
 const router = createBrowserRouter([
