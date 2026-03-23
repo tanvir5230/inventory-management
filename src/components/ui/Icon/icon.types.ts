@@ -69,6 +69,71 @@ export const IconName = {
   heart: 'heart',
   laptop: 'laptop',
 
+  // ===== Sidebar =====
+  layoutDashboard: 'layoutDashboard',
+  shieldCheck: 'shieldCheck',
+  package: 'package',
+  createProduct: 'createProduct',
+  expired: 'expired',
+  lowStock: 'lowStock',
+  category: 'category',
+  subCategory: 'subCategory',
+  brands: 'brands',
+  units: 'units',
+  variantAttributes: 'variantAttributes',
+  warranties: 'warranties',
+  printBarcode: 'printBarcode',
+  printQrCode: 'printQrCode',
+  tags: 'tags',
+  barcode: 'barcode',
+  boxes: 'boxes',
+  shoppingCart: 'shoppingCart',
+  receipt: 'receipt',
+  shoppingBag: 'shoppingBag',
+  percent: 'percent',
+  creditCard: 'creditCard',
+  store: 'store',
+  warehouse: 'warehouse',
+  barChart: 'barChart',
+
+  // ===== Stock =====
+  stockAdjustment: 'stockAdjustment',
+  stockTransfer: 'stockTransfer',
+
+  // ===== Promo =====
+  coupons: 'coupons',
+  giftCard: 'giftCard',
+
+  // ===== Purchases =====
+  purchaseOrder: 'purchaseOrder',
+  purchaseReturn: 'purchaseReturn',
+
+  // ===== Finance =====
+  income: 'income',
+  bankAccount: 'bankAccount',
+  moneyTransfer: 'moneyTransfer',
+  balanceSheet: 'balanceSheet',
+  trialBalance: 'trialBalance',
+  cashFlow: 'cashFlow',
+  accountStatement: 'accountStatement',
+
+  // ===== Peoples =====
+  billers: 'billers',
+  suppliers: 'suppliers',
+
+  // ===== HRM =====
+  departments: 'departments',
+  designation: 'designation',
+  shifts: 'shifts',
+  attendance: 'attendance',
+  leaves: 'leaves',
+  holidays: 'holidays',
+  payroll: 'payroll',
+
+  // ===== User Management =====
+  rolesPermissions: 'rolesPermissions',
+  deleteRequest: 'deleteRequest',
+
   // ===== Custom =====
   circle: 'circle',
 

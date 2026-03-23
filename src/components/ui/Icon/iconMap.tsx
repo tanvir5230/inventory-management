@@ -1,11 +1,21 @@
 import {
+  Activity,
   AlertCircle,
   AlertTriangle,
   ArrowDown,
   ArrowLeft,
+  ArrowLeftRight,
   ArrowRight,
   ArrowUp,
+  ArrowUpDown,
+  Award,
+  BadgeCheck,
+  Banknote,
+  BarChart3,
+  Barcode,
   Bell,
+  Boxes,
+  Building2,
   // Misc
   Calendar,
   Check,
@@ -15,49 +25,83 @@ import {
   ChevronRight,
   ChevronUp,
   CirclePlus,
+  ClipboardCheck,
+  ClipboardList,
   // Fallback
   CircleQuestionMark,
   Clock,
   CommandIcon,
+  CreditCard,
   Download,
   // Files
   File,
+  FileSearch,
   FileText,
   Folder,
+  Gift,
   Heart,
   // Navigation
   Home,
   // Status
   Info,
+  Landmark,
   Laptop,
+  LayersIcon,
+  LayoutDashboard,
+  LayoutGrid,
+  Leaf,
   Loader2,
   LogOut,
   Maximize,
+  Medal,
   Menu,
   Minus,
   MoreHorizontal,
   MoreVertical,
+  Package,
+  PackagePlus,
+  PackageX,
   Pause,
   Pencil,
+  Percent,
   // Media
   Play,
   Plus,
+  QrCode,
+  Receipt,
   RefreshCw,
+  Ruler,
+  Scale,
+  ScrollText,
   // Actions
   Search,
   Settings,
+  ShieldCheck,
+  ShoppingBag,
+  ShoppingCart,
+  SlidersHorizontal,
   Square,
   Star,
+  Store,
+  Tags,
+  Ticket,
   Trash2,
+  TrendingDown,
+  TrendingUp,
+  Truck,
   Upload,
   // User
   User,
+  UserCheck,
   Users,
+  UserX,
   Volume2,
+  Warehouse,
   X,
 } from 'lucide-react';
 
 import { CustomCircleIcon } from './custom-icons/circle';
+import { CustomExpiredIcon } from './custom-icons/expired';
 import type { TIcon, TIconName } from './icon.types';
 
 export const IconMap: Record<TIconName, TIcon> = {
@@ -121,6 +165,71 @@ export const IconMap: Record<TIconName, TIcon> = {
   star: Star,
   heart: Heart,
   laptop: Laptop,
+
+  // ===== Sidebar =====
+  layoutDashboard: LayoutDashboard,
+  shieldCheck: ShieldCheck,
+  package: Package,
+  createProduct: PackagePlus,
+  expired: CustomExpiredIcon,
+  lowStock: TrendingDown,
+  category: LayoutGrid,
+  subCategory: LayersIcon,
+  brands: Award,
+  units: Ruler,
+  variantAttributes: SlidersHorizontal,
+  warranties: BadgeCheck,
+  printBarcode: Barcode,
+  printQrCode: QrCode,
+  tags: Tags,
+  barcode: Barcode,
+  boxes: Boxes,
+  shoppingCart: ShoppingCart,
+  receipt: Receipt,
+  shoppingBag: ShoppingBag,
+  percent: Percent,
+  creditCard: CreditCard,
+  store: Store,
+  warehouse: Warehouse,
+  barChart: BarChart3,
+
+  // ===== Stock =====
+  stockAdjustment: ArrowUpDown,
+  stockTransfer: ArrowLeftRight,
+
+  // ===== Promo =====
+  coupons: Ticket,
+  giftCard: Gift,
+
+  // ===== Purchases =====
+  purchaseOrder: ClipboardList,
+  purchaseReturn: PackageX,
+
+  // ===== Finance =====
+  income: TrendingUp,
+  bankAccount: Landmark,
+  moneyTransfer: ArrowLeftRight,
+  balanceSheet: Scale,
+  trialBalance: FileSearch,
+  cashFlow: Activity,
+  accountStatement: ScrollText,
+
+  // ===== Peoples =====
+  billers: UserCheck,
+  suppliers: Truck,
+
+  // ===== HRM =====
+  departments: Building2,
+  designation: Medal,
+  shifts: Clock,
+  attendance: ClipboardCheck,
+  leaves: Leaf,
+  holidays: Calendar,
+  payroll: Banknote,
+
+  // ===== User Management =====
+  rolesPermissions: ShieldCheck,
+  deleteRequest: UserX,
 
   // ===== Custom =====
   circle: CustomCircleIcon,

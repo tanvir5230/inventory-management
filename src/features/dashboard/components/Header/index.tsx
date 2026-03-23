@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/Icon';
 import SearchBox from '@/components/ui/search-box';
 import { Separator } from '@/components/ui/separator';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 import { cn } from '@/utils';
 import LanguageSelection from './LanguageSelection';
 import { StoreSelection } from './StoreSelection';
@@ -19,7 +20,11 @@ export function DashboardHeader({ className, ...rest }: DashboardHeaderProps) {
         className,
       )}
     >
-      <SearchBox />
+      <div className='flex items-center gap-2'>
+        <SidebarTrigger className='-ml-1' />
+        <Separator orientation='vertical' className='h-6' />
+        <SearchBox />
+      </div>
       <div className='flex-1 flex items-center justify-end gap-2 h-full'>
         <StoreSelection />
 
