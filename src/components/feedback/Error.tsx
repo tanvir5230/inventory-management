@@ -7,33 +7,30 @@ export function ErrorFallback() {
   return (
     <div
       role='alert'
-      className='flex min-h-screen w-full items-center justify-center bg-background px-4'
+      className='flex min-h-screen w-full items-center justify-center bg-background px-6 py-12'
     >
-      <div className='flex flex-col items-center text-center max-w-md space-y-6'>
-        {/* Illustration */}
+      <div className='flex w-full max-w-lg flex-col items-center gap-8 text-center'>
         <Image
           src={ErrorIllustration}
           alt='Something went wrong'
-          className='w-full lg:w-auto max-w-120 h-auto'
+          className='h-auto w-full max-w-sm sm:max-w-md'
         />
 
-        {/* Text Content */}
-        <div className='space-y-2 mt-4'>
-          <h2 className='text-2xl font-bold text-gray-900'>Oops, something went wrong</h2>
-          <p className='text-sm text-muted-foreground'>
-            Server Error 500. We apologise and are fixing the problem Please try again at a later
-            stage
+        <div className='space-y-3'>
+          <h2 className='text-2xl font-bold sm:text-3xl'>Oops, something went wrong</h2>
+          <p className='text-sm text-muted-foreground sm:text-base'>
+            Server Error 500. We apologise and are fixing the problem.
+            <br className='hidden sm:block' /> Please try again at a later stage.
           </p>
         </div>
 
-        {/* Actions */}
-        <div className='flex items-center gap-3'>
+        <div className='flex flex-wrap items-center justify-center gap-3'>
           <Button onClick={() => window.location.reload()} className='flex items-center gap-2'>
-            <Icon name='refresh' className='w-4 h-4' />
-            Refresh
+            <Icon name='refresh' className='h-4 w-4' />
+            Try again
           </Button>
 
-          <Button variant='ghost' onClick={() => window.location.assign('/')}>
+          <Button variant='outline' onClick={() => window.location.assign('/')}>
             Go Home
           </Button>
         </div>
