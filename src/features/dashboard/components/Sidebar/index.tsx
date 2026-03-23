@@ -17,6 +17,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
   SidebarSeparator,
+  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { dashboardNavItems } from './sidebar.data';
 
@@ -25,10 +26,12 @@ export const DashboarSidebar = () => {
 
   return (
     <Sidebar collapsible='icon'>
-      <SidebarHeader className='px-4 py-3 border-b h-16.25'>
+      <SidebarHeader className='flex flex-row items-center justify-between px-4 py-3 border-b h-16.25'>
         <Link to='/dashboard'>
           <Image src={logo} alt='Logo' className='w-28.5 object-contain' />
         </Link>
+
+        <SidebarTrigger className='bg-primary text-primary-foreground rounded-full p-2 translate-x-7.5 z-10' />
       </SidebarHeader>
 
       <SidebarContent className='px-3 py-2'>
