@@ -5,7 +5,9 @@ import { useGetDashboardOverview } from '../../hooks';
 import DashboardOverviewAlert from './Alert';
 import FinancialSummaryCard from './FinancialSummaryCard';
 import { DashboardOverviewHeader } from './Header';
+import { OverallInfo } from './OverallInfo';
 import { OverviewSummaryCard } from './OverviewSummaryCard';
+import { SalesPurchaseChart } from './SalesPurchaseChart';
 
 const DashboardOverview = () => {
   const [showLowStockAlert, setShowLowStockAlert] = useState<boolean>(true);
@@ -101,6 +103,11 @@ const DashboardOverview = () => {
           trend={{ value: '-20%', direction: 'down' }}
           viewAllHref={paths.app.purchases.purchaseReturn.getHref()}
         />
+      </div>
+
+      <div className='grid grid-cols-1 lg:grid-cols-6 gap-6'>
+        <SalesPurchaseChart />
+        <OverallInfo />
       </div>
     </div>
   );
