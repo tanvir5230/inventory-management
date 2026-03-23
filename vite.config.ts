@@ -14,6 +14,27 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true, // clear the dist folder before building
+    sourcemap: false,
     chunkSizeWarningLimit: 1000,
+    rolldownOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
+
+        manualChunks(id) {
+          if (
+            id.includes('node_modules/react/') ||
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/react-router')
+          ) {
+            return '@framework';
+          }
+          if (id.includes('node_modules')) {
+            return '@vendor';
+          }
+        },
+      },
+    },
   },
 });
