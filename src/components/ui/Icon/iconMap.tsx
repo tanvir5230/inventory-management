@@ -16,6 +16,7 @@ import {
   Boxes,
   Building2,
   Calendar,
+  ChartPie,
   Check,
   CheckCircle,
   ChevronDown,
@@ -157,6 +158,8 @@ export const IconMap: Record<TIconName, TIcon> = {
   star: Star,
   heart: Heart,
   laptop: Laptop,
+  layers: LayersIcon,
+  chartPie: ChartPie,
 
   // ===== Sidebar =====
   layoutDashboard: LayoutDashboard,

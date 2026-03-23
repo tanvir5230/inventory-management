@@ -69,7 +69,19 @@
   --color-pink: var(--pink);
   --color-purple: var(--purple);
   --color-teal: var(--teal);
+  --color-cyan-transparent: var(--cyan-transparent);
+  --color-error-transparent: var(--error-transparent);
+  --color-grey-transparent: var(--grey-transparent);
+  --color-indigo-transparent: var(--indigo-transparent);
+  --color-info-transparent: var(--info-transparent);
   --color-orange-transparent: var(--orange-transparent);
+  --color-pink-transparent: var(--pink-transparent);
+  --color-primary-transparent: var(--primary-transparent);
+  --color-purple-transparent: var(--purple-transparent);
+  --color-secondary-transparent: var(--secondary-transparent);
+  --color-success-transparent: var(--success-transparent);
+  --color-teal-transparent: var(--teal-transparent);
+  --color-warning-transparent: var(--warning-transparent);
 
   /* Color shades */
   --color-primary-100: var(--primary-100);

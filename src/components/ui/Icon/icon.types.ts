@@ -68,6 +68,8 @@ export const IconName = {
   star: 'star',
   heart: 'heart',
   laptop: 'laptop',
+  layers: 'layers',
+  chartPie: 'chartPie',
 
   // ===== Sidebar =====
   layoutDashboard: 'layoutDashboard',
